@@ -44,16 +44,16 @@ const AffiratinPratice = () => {
             <ImageBackground source={affirtation?.image} resizeMode='cover' className='flex-1'>
                 <AppGradient colors={["rgba(0,0,0,0.3)", "#rgba(0,0,0,0.8)"]}>
                     <Pressable onPress={() => router.back()} className='absolute top-16 left-6 z-10'>
-                        <AntDesign name="leftcircle" size={50} color="white" />
+                        <AntDesign name="leftcircleo" size={50} color="white" />
                     </Pressable>
-                    <ScrollView 
+                    <ScrollView
                         className='mt-20'
-                     showsVerticalScrollIndicator={false}
-                     >
+                        showsVerticalScrollIndicator={false}
+                    >
                         <View className='h-full justify-center'>
                             <View className='h-4/5 justify-center'>
                                 {sentences.map((sentence, idx) => (
-                                    <Text key={idx} className='text-white text-3xl mt-14 mb-12 font-bold text-center '>{sentence}  . </Text> 
+                                    <Text key={idx} className='text-white text-3xl mt-14 mb-12 font-bold text-center '>{sentence}  . </Text>
                                 ))}
                             </View>
                         </View>
