@@ -14,7 +14,7 @@ import { TimerContext } from '@/context/TimerContext'
 const Meditate = () => {
 
     //const [secondsRemaining, setSecondsRemaining] = useState(10)
-    const { duration: secondsRemaining , setDuration }  = useContext(TimerContext)
+    const { duration: secondsRemaining, setDuration } = useContext(TimerContext)
 
     const [isMeditating, SetIsMeditating] = useState(false)
     const [audioSound, setSound] = useState<Audio.Sound>()
@@ -42,12 +42,12 @@ const Meditate = () => {
     }, [secondsRemaining, isMeditating])
 
 
-    useEffect(()=>{
-        return()=>{
+    useEffect(() => {
+        return () => {
             setDuration(10)
             audioSound?.unloadAsync();
         }
-    },[audioSound])
+    }, [audioSound])
 
 
 
@@ -66,38 +66,38 @@ const Meditate = () => {
     }
 
 
-    const toggleSound = async ()=>{
+    const toggleSound = async () => {
         const sound = audioSound ? audioSound : await initializeSound();
 
         const status = await sound?.getStatusAsync();
 
-        if(status?.isLoaded && !isPlayingAudio){
+        if (status?.isLoaded && !isPlayingAudio) {
             await sound.playAsync();
             setPlayingAudio(true)
-        }else{
+        } else {
             await sound.pauseAsync()
             setPlayingAudio(false)
         }
     }
 
 
-   const initializeSound = async ()=>{
-       const audioFileName = MEDITATION_DATA[Number(id) - 1].audio;
+    const initializeSound = async () => {
+        const audioFileName = MEDITATION_DATA[Number(id) - 1].audio;
 
-       const { sound } = await Audio.Sound.createAsync(
-         AUDIO_FILES[audioFileName]
-       );
+        const { sound } = await Audio.Sound.createAsync(
+            AUDIO_FILES[audioFileName]
+        );
 
-       setSound(sound)
-       return sound;
+        setSound(sound)
+        return sound;
 
-   }
+    }
 
-   const AdjustMeditationDuration = ( ) =>{
-     if (isMeditating) toggleMeditationSessionStatus();
+    const AdjustMeditationDuration = () => {
+        if (isMeditating) toggleMeditationSessionStatus();
 
-     router.push("/(model)/adjust-meditation-duration")
-   }
+        router.push("/(model)/adjust-meditation-duration")
+    }
 
 
     return (
@@ -118,12 +118,12 @@ const Meditate = () => {
 
                     </View>
                     <View className='mb-5'>
-                    <CustomButton 
-                        title='Adjust duration' 
-                        onPress={AdjustMeditationDuration} />
-                        <CustomButton 
-                        title={isMeditating ? "STOP": 'Start Meditation'}
-                        onPress={toggleMeditationSessionStatus}  containerStyles='mt-5'/>
+                        <CustomButton
+                            title='Adjust duration'
+                            onPress={AdjustMeditationDuration} />
+                        <CustomButton
+                            title={isMeditating ? "STOP" : 'Start Meditation'}
+                            onPress={toggleMeditationSessionStatus} containerStyles='mt-5' />
                     </View>
                 </AppGradient>
             </ImageBackground>
