@@ -13,7 +13,6 @@ import { TimerContext } from '@/context/TimerContext'
 
 const Meditate = () => {
 
-    //const [secondsRemaining, setSecondsRemaining] = useState(10)
     const { duration: secondsRemaining, setDuration } = useContext(TimerContext)
 
     const [isMeditating, SetIsMeditating] = useState(false)
