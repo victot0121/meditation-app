@@ -1,50 +1,161 @@
-# Welcome to your Expo app 👋
+# Serenity 🌿
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Serenity** is a cross-platform meditation app designed to help users relax, focus, and improve mindfulness through guided meditation sessions and ambient sounds.
 
-## Get started
+Built with **React Native**, powered by **Expo**, and styled using **Tailwind CSS** via NativeWind, Serenity provides a smooth and immersive experience on both Android and iOS platforms.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 📱 Features
 
-2. Start the app
+- 🧘‍♀️ Guided meditation sessions
+- 🎶 Soothing ambient sounds
+- 🎨 Beautiful gradients & visuals
+- ⚡ Fast and responsive UI
+- 🌙 Dark mode friendly
+- 🔁 Seamless navigation with `expo-router`
 
-   ```bash
-    npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🚀 Tech Stack
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS (NativeWind)](https://www.nativewind.dev/)
+- [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)
+- [expo-av](https://docs.expo.dev/versions/latest/sdk/av/)
+- [expo-linear-gradient](https://docs.expo.dev/versions/latest/sdk/linear-gradient/)
+- [expo-router](https://expo.github.io/router/)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 📦 Installation
 
-When you're ready, run:
+Make sure you have **Node.js**, **npm**, **Expo CLI**, and **EAS CLI** installed:
 
 ```bash
-npm run reset-project
+npm install -g expo-cli eas-cli
+````
+
+Then clone the project and install dependencies:
+
+```bash
+git clone https://github.com/yourusername/serenity-app.git
+cd serenity-app
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🧪 Running the App Locally
 
-To learn more about developing your project with Expo, look at the following resources:
+### Start in development mode:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm start
+```
 
-## Join the community
+Or run on Android/iOS simulator:
 
-Join our community of developers creating universal apps.
+```bash
+npm run android
+npm run ios
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## 🔨 EAS Build (APK or iOS)
+
+First, log in to EAS:
+
+```bash
+eas login
+```
+
+Then configure the build setup (if not already done):
+
+```bash
+eas build:configure
+```
+
+To build for **Android (APK)** locally:
+
+```bash
+eas build --platform android --profile preview --local
+```
+
+Or to build on Expo’s cloud:
+
+```bash
+eas build --platform android
+```
+
+> 📄 See [EAS Build Documentation](https://docs.expo.dev/build-reference/eas-json/) for more.
+
+---
+
+## 📁 Project Structure
+
+```
+meditation-app/
+├── app/                 # Expo Router app folder
+├── assets/              # Images, fonts, audio files
+├── components/          # Reusable UI components
+├── scripts/             # Dev helper scripts
+├── tailwind.config.js   # Tailwind setup
+├── eas.json             # EAS Build config
+├── app.json             # Expo config
+└── ...
+```
+
+---
+
+## 🧼 Useful Scripts
+
+* `npm run lint` – Lint your code
+* `npm run test` – Run tests
+* `npm run reset-project` – Clean and reset cache (custom script)
+
+---
+
+## ✅ Dependencies
+
+See the full list in `package.json`, including:
+
+* `expo`: `~51.0.22`
+* `react-native`: `0.74.3`
+* `expo-av`, `expo-linear-gradient`, `expo-router`, `react-native-reanimated`, and more.
+
+---
+
+## 🧠 License
+
+MIT License © 2025 \[Your Name]
+
+---
+
+## 🤝 Contributing
+
+Pull requests and feedback are welcome! Let’s build a more mindful world together.
+
+---
+
+## 📸 Screenshots
+
+> *(Add screenshots of the home page, meditation player, and other screens here if available.)*
+
+---
+
+## 🔗 Links
+
+* [Expo Docs](https://docs.expo.dev/)
+* [EAS Build Guide](https://docs.expo.dev/build/introduction/)
+* [Tailwind for React Native (NativeWind)](https://www.nativewind.dev/)
+
+```
+
+---
+
+Would you like a sample `eas.json` configuration to go with this as well?
+```
